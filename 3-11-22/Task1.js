@@ -1,4 +1,5 @@
-let mark = 60
+function passorfail() {
+    var mark= document.getElementById("Text").value;
 if (mark<50) {
     document.write(failed);
 }
@@ -16,5 +17,7 @@ else  if (mark>=90 && mark<=100)  {
 }
 else{
     document.write("INVALID")
+}
+
 }
     
