@@ -1,0 +1,15 @@
+.sel {
+    display: inline;
+}
+.Q1 {
+    width: 500px;
+    display: flex;
+    justify-content: space-around;
+}
+.Heading {
+    font-size: 40px;
+}
+*{
+  font-size: 20px;
+  font-family: 'Noto Sans', sans-serif;
+}

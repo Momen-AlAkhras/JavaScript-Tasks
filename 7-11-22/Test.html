@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="Test.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@1,500&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <h1 class="Heading">Kahootna</h1>
+<br>
+<!-- Question 1 -->
+    <p>What is the output of this code <br>
+        let text = "a b c d";
+        <br>
+        let length = text.length;
+        <br>
+        document.write(length)</p>
+    <hr>
+    <div class="Q1">
+    <div class="sel">
+        <input type="radio" name="size" value="XS" id="xs" class="False">
+        <label for="xs">12</label>
+    </div>
+    <div class="sel">
+        <input type="radio" name="size" value="S" id="True">
+        <label for="s">7</label>
+    </div>
+    <div class="sel">
+        <input type="radio" name="size" value="M" id="m" class="False">
+        <label for="m">9</label>
+    </div>
+    <div class="sel">
+        <input type="radio" name="size" value="L" id="l" class="False">
+        <label for="l">4</label>
+    </div>
+    </div>
+    <br>
+    <div class="Q1">
+    <p>
+        <button id="btn">Submit</button>
+    </p>
+    </div>
+    <p id="output"></p>
+    <br>
+    <p>What is the output of this code?
+        <br>let text1 = "     abcd      ";
+        <br>
+        let text2 = text1.trim();
+        <br>
+        document.write(text2.length);
+        <br>
+    </p>
+    <hr>
+    <div class="Q1">
+    <div class="sel">
+        <input type="radio" name="size" value="XS" id="xs" class="False1">
+        <label for="xs">6</label>
+    </div>
+    <div class="sel">
+        <input type="radio" name="size" value="S" class="False1">
+        <label for="s">16</label>
+    </div>
+    <div class="sel">
+        <input type="radio" name="size" value="M" id="m" class="False1">
+        <label for="m">10</label>
+    </div>
+    <div class="sel">
+        <input type="radio" name="size" value="L" id="l" id="True">
+        <label for="l">4</label>
+    </div>
+    </div>
+    <br>
+    <div class="Q1">
+    <p>
+        <button id="btn1" >Submit</button>
+    </p>
+    </div>
+    <p id="output1"></p>
+    <br>
+    <p>What is the output of this code?
+        <br>const fruits = ["Banana", "Orange", "Apple", "Mango"];
+        <br>
+        let length = fruits.length;
+        <br>
+        document.write(fruits[1]);
+        <br>
+    </p>
+    <hr>
+    <div class="Q1">
+    <div class="sel">
+        <input type="radio" name="size" value="XS" id="xs" class="False2">
+        <label for="xs">Banana</label>
+    </div>
+    <div class="sel">
+        <input type="radio" name="size" value="S" class="False2">
+        <label for="s">Mango</label>
+    </div>
+    <div class="sel">
+        <input type="radio" name="size" value="M" id="True">
+        <label for="m">Orange</label>
+    </div>
+    <div class="sel">
+        <input type="radio" name="size" value="L" id="l" class="False2">
+        <label for="l">Apple</label>
+    </div>
+    </div>
+    <br>
+    <div class="Q1">
+    <p>
+        <button id="btn2" >Submit</button>
+    </p>
+    </div>
+    <p id="output2"></p>
+    <p>What is the output of this code? <br>
+        function myFunction(i1, i2) { <br>
+            return i1%i2;
+          }
+          <br>
+          let i1= 9
+          <br>
+          let i2= 5
+    </p>
+    <hr>
+    <div class="Q1">
+    <div class="sel">
+        <input type="radio" name="size" value="XS" id="xs" class="False3">
+        <label for="xs">45</label>
+    </div>
+    <div class="sel">
+        <input type="radio" name="size" value="S" id="True" >
+        <label for="s">4</label>
+    </div>
+    <div class="sel">
+        <input type="radio" name="size" value="M" id="m" class="False3">
+        <label for="m">50</label>
+    </div>
+    <div class="sel">
+        <input type="radio" name="size" value="L" id="l" class="False3">
+        <label for="l">55</label>
+    </div>
+    </div>
+    <br>
+    <div class="Q1">
+    <p>
+        <button id="btn3" >Submit</button>
+    </p>
+    </div>
+    <p id="output3"></p>
+
+    <a href="Test2.html">More</a>
+
+    <script>
+
+        var btn = document.querySelector('#btn');        
+        var radioButtons = document.querySelectorAll('.False');
+        var True = document.querySelector('#True');
+        let selectedSize;
+        btn.addEventListener("click", () => {
+            for (const radioButton of radioButtons) {
+                if (radioButton.checked) {
+                    selectedSize = radioButton.value;
+                    break;
+                }
+            }
+            // show the output:
+            output.innerText = selectedSize ? `False` : `True`;
+        });
+        var btn1 = document.querySelector('#btn1');
+        btn1.addEventListener("click", () => {        
+        var radioButtons1 = document.querySelectorAll('.False1');
+        var True = document.querySelector('#True1');
+            for (const radioButton of radioButtons1) {
+                if (radioButton.checked) {
+                    selectedSize = radioButton.value;
+                    break;
+                }
+            }
+            // show the output:
+            output1.innerText = selectedSize ? `False` : `True`;
+        });
+        var btn2 = document.querySelector('#btn2');
+        btn2.addEventListener("click", () => {        
+        var radioButtons2 = document.querySelectorAll('.False2');
+        var True = document.querySelector('#True2');
+            for (const radioButton of radioButtons2) {
+                if (radioButton.checked) {
+                    selectedSize = radioButton.value;
+                    break;
+                }
+            }
+            // show the output:
+            output2.innerText = selectedSize ? `False` : `True`;
+        });
+        var btn3 = document.querySelector('#btn3');
+        btn3.addEventListener("click", () => {        
+        var radioButtons3 = document.querySelectorAll('.False3');
+        var True = document.querySelector('#True3');
+            for (const radioButton of radioButtons3) {
+                if (radioButton.checked) {
+                    selectedSize = radioButton.value;
+                    break;
+                }
+            }
+            // show the output:
+            output3.innerText = selectedSize ? `False` : `True`;
+        });
+    </script>
+</body>
+</html>
+</body>
+</html>

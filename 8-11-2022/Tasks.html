@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #flags {
+          display: flex;
+          flex-direction: column;
+          height: 600px;
+          width: 500px;
+          justify-content: space-around;
+          border: 2px solid black;
+          align-items: center;
+        }
+        #flag {
+          height: 30%;
+          width: 70;
+          border: 1px solid black;
+        }
+        .text {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            width: 500px;
+            height: 500px;
+            border: 2px solid black;
+        }
+        #textarea{
+            font-family: 'Times New Roman', Times, serif;
+            overflow: hidden;
+        }
+        .pfields{
+            display: flex;
+            justify-content: space-around;
+            flex-direction: column;
+            width: 500px;
+            height: 500px;
+            border: solid black 2px;
+        }
+        #btn{
+            display: none;
+        }
+     
+
+    </style>
+</head>
+<body>
+    <!--Task 1 -->
+    <h1 id="heading"></h1>
+<br>
+<br>
+<br>
+<br>
+<!-- Task 2 -->
+    <div id="flags">
+    <p>Where are you from?</p>
+    <select name="Country Selector" id="Country" onchange="Country()">
+        <option value="Norway">Norway</option>
+        <option value="Jordan">Jordan</option>
+        <option value="Russia">Russia</option>
+        <option value="Japan">Japan</option>
+        <option value="Germany">Germany</option>
+    </select>
+    <img src="Norway.png" alt="" id="flag">
+    </div>
+    <br>
+<br>
+<br>
+<br>
+<!-- Task 3 -->
+    <div class="text">
+    <div><select name="fonttype" id="fonttype" onchange="Fonttype()">
+           <option value="times">Times New Roman</option>
+           <option value="arial">Arial</option>
+           <option value="opensans">Open Sans</option>
+         </select>
+         <select name="fontsize" id="fontsize" onchange="FontSize()">
+            <option value="12px">12px</option>
+            <option value="18px">18px</option>
+            <option value="24px">24px</option>
+          </select>
+         <input type="checkbox" value="Bold" id="Bold" onchange="Bold()">Bold
+         <input type="checkbox" value="Italic" id="Italic" onchange="Italic()">Italic
+         <input type="checkbox" value="Underline" id="Underline" onchange="Underline()">Underline
+    </div>
+     <textarea name="inputtext" id="textarea" cols="40" rows="20"></textarea>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+<!-- Task 4 -->
+    <div class="pfields">
+      <span>enter your password</span> <input type="password" id="password2" onkeyup="pass1()">
+      <span id="pshort" style="color: red;"></span>
+       <br>
+       <br>
+       <span>confrim password</span><input type="password" id="cpassword" onkeyup="pass1()"><span id="pdontmatch" style="color: red;"></span>
+       <br>
+       <button type="submit" value="submit" id="btn">Submit</button>
+
+
+
+
+    </div>
+<script>
+        // Task 1
+     var head = document.getElementById("heading");
+     head.innerHTML="Task 1";
+     head.style.backgroundColor= "Yellow";
+     head.style.width="500px"
+     head.style.height="100px"
+     head.style.display="flex"
+     head.style.justifyContent="center"
+     head.style.alignItems="center"
+     head.style.border="3px solid black"
+       // Task 2
+
+
+     function Country(){
+        var CountrySelected = document.getElementById("Country").value;
+        var flag = document.getElementById("flag");
+       if (CountrySelected == "Norway"){
+        flag.src ="Norway.png";
+        
+       }
+       else if (CountrySelected== "Jordan"){
+        flag.src ="Jordan.png";
+        
+    
+       }
+       else if (CountrySelected == "Russia"){
+        flag.src = "Russia.png"
+    
+       }
+       else if (CountrySelected == "Japan"){
+        flag.src = "Japan.png"
+
+       }
+       else if (CountrySelected == "Germany"){
+        flag.src = "Germany.png"
+       }
+     }
+    //    Task 3
+     function Fonttype(){
+        var fonttype = document.getElementById("fonttype").value;
+        var textarea = document.getElementById("textarea");
+        if (fonttype == "times"){
+            textarea.style.fontFamily="'Times New Roman', Times, serif";
+        }
+        else if (fonttype == "arial"){
+            textarea.style.fontFamily="Arial, Helvetica, sans-serif";
+        }
+        else if (fonttype == "opensans"){
+            textarea.style.fontFamily="system-ui,'Segoe UI','Open Sans', 'Helvetica Neue', sans-serif"
+        }
+     }
+     function FontSize(){
+        var fontsize = document.getElementById("fontsize").value;
+        var textarea = document.getElementById("textarea");
+        if (fontsize == "12px"){
+            textarea.style.fontSize="12px";
+        }
+        else if(fontsize == "24px"){
+            textarea.style.fontSize="24px";
+        }
+        else if(fontsize == "18px"){
+            textarea.style.fontSize="18px";
+        }
+     }
+     function Bold(){
+        var x = document.getElementById("Bold").checked;
+        if (x){
+            textarea.style.fontWeight="Bold"
+        }
+        else{
+            textarea.style.fontWeight="Normal"
+        }
+     }
+     function Italic(){
+        var x = document.getElementById("Italic").checked;
+        if (x){
+            textarea.style.fontStyle="Italic"
+        }
+        else{
+            textarea.style.fontStyle="Normal"
+        }
+     }
+     function Underline(){
+        var x = document.getElementById("Underline").checked;
+        if (x){
+            textarea.style.textDecoration="Underline"
+        }
+        else{
+            textarea.style.textDecoration="None"
+        }
+
+     }
+     
+    //  Task 4
+     function pass1(){
+        var p =document.getElementById("passwor2");
+        var z =document.getElementById("password2").value;
+        var c =document.getElementById("cpassword").value;
+        var pshort =document.getElementById("pshort");
+        var pdontmatch =document.getElementById("pdontmatch");
+        var btn =document.getElementById("btn")
+        console.log(z);
+        if (z.length<6){
+
+            pshort.innerHTML="Password is too short";
+        }
+        else {
+            pshort.style.display="none"
+        }
+        if (z.length>1 && c.length>1){
+        if (z != c ){
+            pdontmatch.innerHTML="Password does not match"
+            pdontmatch.style.color="red"
+            btn.style.display="none"
+        }
+        else{
+            pdontmatch.innerHTML="Password Matches!"
+            pdontmatch.style.color="green"
+            btn.style.display="block"
+        }
+       }
+     }
+     
+
+</script>
+</body>
+</html>

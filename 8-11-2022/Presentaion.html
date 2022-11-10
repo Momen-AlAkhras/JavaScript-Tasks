@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>    
+    .card {
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        transition: 0.3s;
+        border-radius: 5px; /* 5px rounded corners */
+        width: 400px;
+        height: 300px;
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+      }
+      *{
+        font-size: 40px;
+      }
+      
+      #Moath {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 600px;
+      }
+      /* Add rounded corners to the top left and the top right corner of the image */
+      img {
+        border-radius: 5px 5px 0 0;
+        max-width: 200px;
+        max-height: 200px;
+      }
+      .new {
+        src: url(../Photos/download.jpg);
+      }
+      #Moath1{
+        display: none;
+      }
+      </style>
+
+</head>
+<body>
+    <h1 style="text-align:center">Document Object Model</h1>
+    <div id="Moath">
+ <div class="card"><img src="Photos/Placeholder.gif" alt="" id="Razan" onclick="Razan(this)"><span class="Rz">Razan Smadi</span></div>
+ <div class="card" onmouseover="Display()" onmouseout="DisplayNO()"><img src="Photos/moath.jpg" alt="" id="Moath1">Moath Bdour</div>
+ <div class="card"><img src="Photos/Placeholder.gif" alt="" onclick="Momen(this)" id="Momen">Momen Al-Akhras</div>
+    </div>
+    <div style="display:flex; justify-content:center;"><input type="text"  id="input"></div>
+ <script> 
+    function Razan(Razan){
+        var Razan = document.getElementById("Razan");
+        Razan.src="Photos/Razan.jpg";
+    }
+
+    function Momen(Momen){
+        var Momen = document.getElementById("Momen");
+        Momen.src="Photos/momen.png";
+    }
+   var Rz =document.getElementsByClassName("Rz");
+   Rz[0].style.color = "blue";
+
+   var input =document.getElementById("input");
+
+   var cards =document.getElementsByClassName("card");
+ 
+   input.onkeydown = function(){
+       var color = input.value; 
+       
+       for(let i = 0 ; i <= cards.length ; i++){
+        cards[i].style.backgroundColor = color; 
+       }
+   }
+   var Moath1 = document.getElementById("Moath1")
+   function Display(){
+   Moath1.style.display="block";
+   }
+   function DisplayNO(){
+    Moath1.style.display="none";
+   }
+   
+   
+   
+  
+ </script>
+</div>
+</body>
+</html>

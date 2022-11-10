@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="Test.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 class="Heading">Kahootna</h1>
+<br>
+<!-- Question 1 -->
+    <p>The array is a special type of : </p>
+    <hr>
+    <div class="Q1">
+    <div class="sel">
+        <input type="radio" name="size" value="XS" id="xs" class="False">
+        <label for="xs">Function</label>
+    </div>
+    <div class="sel">
+        <input type="radio" name="size" value="S" id="True">
+        <label for="s">Object</label>
+    </div>
+    <div class="sel">
+        <input type="radio" name="size" value="M" id="m" class="False">
+        <label for="m">String</label>
+    </div>
+    <div class="sel">
+        <input type="radio" name="size" value="L" id="l" class="False">
+        <label for="l">Variables</label>
+    </div>
+    </div>
+    <br>
+    <div class="Q1">
+    <p>
+        <button id="btn">Submit</button>
+    </p>
+    </div>
+    <p id="output"></p>
+    <br>
+
+    <p>JavaScript objects are containers for (........) values called properties</p>
+    <hr>
+    <div class="Q1">
+    <div class="sel">
+        <input type="radio" name="size" value="XS" id="xs" id="True">
+        <label for="xs">Named</label>
+    </div>
+    <div class="sel">
+        <input type="radio" name="size" value="S" class="False1">
+        <label for="s">Numbers</label>
+    </div>
+    <div class="sel">
+        <input type="radio" name="size" value="M" id="m" class="False1">
+        <label for="m">String</label>
+    </div>
+    <div class="sel">
+        <input type="radio" name="size" value="L" id="l" class="False1">
+        <label for="l">Tags</label>
+    </div>
+    </div>
+    <br>
+    <div class="Q1">
+    <p>
+        <button id="btn1" >Submit</button>
+    </p>
+    </div>
+    <p id="output1"></p>
+    <br>
+    <p>what is the output of this code?<br>
+        document.write("2")<br>
+    document.write("L")</p>
+    <hr>
+    <div class="Q1">
+    <div class="sel">
+        <input type="radio" name="size" value="XS" id="xs" class="False2">
+        <label for="xs">L</label>
+    </div>
+    <div class="sel">
+        <input type="radio" name="size" value="S" id="True">
+        <label for="s">2L</label>
+    </div>
+    <div class="sel">
+        <input type="radio" name="size" value="M" id="m" class="False2">
+        <label for="m">L2</label>
+    </div>
+    <div class="sel">
+        <input type="radio" name="size" value="L" id="l" class="False2">
+        <label for="l">2</label>
+    </div>
+    </div>
+    <br>
+    <div class="Q1">
+    <p>
+        <button id="btn2" >Submit</button>
+    </p>
+    </div>
+    <p id="output2"></p>
+    <p>Const Car= [Volvo,Maybach,Ford]<br>
+    Car is a:</p>
+    <hr>
+    <div class="Q1">
+    <div class="sel">
+        <input type="radio" name="size" value="XS" id="xs" class="False3">
+        <label for="xs">Value</label>
+    </div>
+    <div class="sel">
+        <input type="radio" name="size" value="S" class="False3">
+        <label for="s">String</label>
+    </div>
+    <div class="sel">
+        <input type="radio" name="size" value="M" id="m" class="False3">
+        <label for="m">Number</label>
+    </div>
+    <div class="sel">
+        <input type="radio" name="size" value="L" id="l" id="True">
+        <label for="l">Array</label>
+    </div>
+    </div>
+    <br>
+    <div class="Q1">
+    <p>
+        <button id="btn3" >Submit</button>
+    </p>
+    </div>
+    <p id="output3"></p>
+
+    <a href="Test.html">More</a>
+
+    <script>
+
+        var btn = document.querySelector('#btn');        
+        var radioButtons = document.querySelectorAll('.False');
+        var True = document.querySelector('#True');
+        let selectedSize;
+        btn.addEventListener("click", () => {
+            for (const radioButton of radioButtons) {
+                if (radioButton.checked) {
+                    selectedSize = radioButton.value;
+                    break;
+                }
+            }
+            // show the output:
+            output.innerText = selectedSize ? `False` : `True`;
+        });
+        var btn1 = document.querySelector('#btn1');
+        btn1.addEventListener("click", () => {        
+        var radioButtons1 = document.querySelectorAll('.False1');
+        var True = document.querySelector('#True1');
+            for (const radioButton of radioButtons1) {
+                if (radioButton.checked) {
+                    selectedSize = radioButton.value;
+                    break;
+                }
+            }
+            // show the output:
+            output1.innerText = selectedSize ? `False` : `True`;
+        });
+        var btn2 = document.querySelector('#btn2');
+        btn2.addEventListener("click", () => {        
+        var radioButtons2 = document.querySelectorAll('.False2');
+        var True = document.querySelector('#True2');
+            for (const radioButton of radioButtons2) {
+                if (radioButton.checked) {
+                    selectedSize = radioButton.value;
+                    break;
+                }
+            }
+            // show the output:
+            output2.innerText = selectedSize ? `False` : `True`;
+        });
+        var btn3 = document.querySelector('#btn3');
+        btn3.addEventListener("click", () => {        
+        var radioButtons3 = document.querySelectorAll('.False3');
+        var True = document.querySelector('#True3');
+            for (const radioButton of radioButtons3) {
+                if (radioButton.checked) {
+                    selectedSize = radioButton.value;
+                    break;
+                }
+            }
+            // show the output:
+            output3.innerText = selectedSize ? `False` : `True`;
+        });
+    </script>
+</body>
+</html>
+</body>
+</html>

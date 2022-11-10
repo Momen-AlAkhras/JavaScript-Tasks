@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@1,500&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: 'Noto Sans', sans-serif;
+        }
+        div{
+         display: flex;
+         justify-content: center;
+         gap: 50px;
+         margin: 70px;
+        }
+        #Form {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+        #btn {
+            width: 100px;
+        } 
+        #Card{
+         visibility: hidden;
+         height: 800px;
+         width: 800px;
+         background-color: aliceblue;
+         border: solid 1px black;
+         display: flex;
+         justify-content: space-evenly;
+         flex-direction: column;
+        
+        }
+     
+        
+  
+    </style>
+</head>
+<body>
+    <form id="Form">
+    <fieldset>
+    <legend style="text-align:center ;">Personal Information</legend>
+    <div class="NAM">
+     <label for="Name">Name</label>
+       <input type="text" id="Name">
+     <label for="Age">Age</label>
+       <input type="number" id="Age">
+     <label for="Major">Major</label>
+       <input type="text" id="Major">
+     <label for="University">University</label>
+       <input type="text" id="University">
+    </div>
+    <div>
+     <label for="Male">Male</label>
+       <input type="radio" name="Gender" id="Male" value="Male">
+      <label for="Female">Female</label>
+        <input type="radio" name="Gender" id="Female" value="Female">
+      <p id="Gerror"></p>
+    </div>
+    <div id="Textbox">
+     <label for="Description">Describe yourself in 100 Words or less.</label>
+       <textarea name="Description" id="Description" cols="30" rows="10" placeholder="Describe yourself!"></textarea>
+   </div>
+   <div class="GL">
+     <p>What languages are you proficient in?</p>
+     <label for="HTML">HTML</label>
+       <input type="checkbox" name="HTML" id="HTML" value="HTML">
+     <label for="CSS">CSS</label>
+       <input type="checkbox" name="CSS" id="CSS" value="CSS">
+     <label for="JS">JavaScript</label>
+       <input type="checkbox" name="JS" id="JS" value="JS">
+   </div>
+    </fieldset>
+    </form>
+    <div>
+        <button id="btn" onclick="Info()">Log</button>
+         </div>
+  
+    <div id="Card">
+     <div>
+      <p id="logname"></p>
+      <p id="logage"></p>
+      <p id="logmajor"></p>
+      <p id="loguni"></p>
+    </div>
+     <div>
+       <p id="loggender"></p>
+     </div>
+     <div>
+       <p id="logdescription"></p>
+     </div>
+     <div>
+      <p id="loghtml"></p>
+      <p id="logcss"></p>
+      <p id="logjs"></p>
+     </div>
+    </div>
+
+    <script>
+        // Variables!
+     
+    function Info(){
+     let Name =document.getElementById("Name").value; 
+     let Age =document.getElementById("Age").value;
+     let Major =document.getElementById("Major").value;
+     let University =document.getElementById("University").value;
+     var gender=document.querySelector('input[name="Gender"]:checked').value;
+     let Description =document.getElementById("Description").value;
+     let HTML =document.getElementById("HTML").checked;
+     let CSS =document.getElementById("CSS").checked;
+     let JavaScript =document.getElementById("JS").checked;
+     let logname =document.getElementById("logname");
+     let logage =document.getElementById("logage");
+     let logmajor =document.getElementById("logmajor");
+     let loguni =document.getElementById("loguni");
+     let loggender =document.getElementById("loggender");
+     let logdescription =document.getElementById("logdescription");
+     let loghtml =document.getElementById("loghtml");
+     let logcss =document.getElementById("logcss");
+     let logjs =document.getElementById("logjs");
+     let card =document.getElementById("Card");
+     localStorage.setItem("Name",Name);
+     localStorage.setItem("Gender",gender);
+     localStorage.setItem("Age",Age);
+     localStorage.setItem("Major",Major);
+     localStorage.setItem("University",University);
+     localStorage.setItem("Description",Description);
+     localStorage.setItem("HTML",HTML);
+     localStorage.setItem("CSS",CSS);
+     localStorage.setItem("JavaScript",JavaScript);
+     logname.innerHTML=localStorage.getItem("Name");
+     logage.innerHTML=localStorage.getItem("Gender");
+     logmajor.innerHTML=localStorage.getItem("Age");
+     loguni.innerHTML=localStorage.getItem("Major");
+     loggender.innerHTML=localStorage.getItem("University");
+     logdescription.innerHTML=localStorage.getItem("Description");
+     card.style.visibility="visible";
+     if (HTML==true){
+      loghtml.innerHTML="HTML"
+    
+     }
+     if (CSS==true){
+      logcss.innerHTML="CSS"
+     }
+     if (JavaScript==true){
+      logjs.innerHTML="JavaScript"
+     }
+    }
+      
+    
+
+
+
+
+
+    </script>
+</body>
+</html>

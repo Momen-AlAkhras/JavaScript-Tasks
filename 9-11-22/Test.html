@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@1,500&display=swap" rel="stylesheet">
+    <style>
+#div {
+     display: flex;
+     justify-content: space-evenly;
+     margin-top: 200px;
+
+}
+:root {
+     --Cyan:#b9bfff;
+     --DrkGray:#3C4048;
+     --Gray:#B2B2B2;
+     --White:#EAEAEA;
+}
+* {
+     padding: 0;
+     margin: 0;  
+     font-family: 'Noto Sans', sans-serif;
+     box-sizing: border-box;
+}
+ h1{
+    text-align: center;
+ } 
+ #btns {
+    display: flex;
+    justify-content: center;
+    gap: 300px;
+    margin-top: 200px;
+ }
+    </style>
+</head>
+<body>
+    <h1>Log in!</h1>
+    <div id="div">
+    <div id="Username"><label for="username">Username:</label> <input type="text" id="usernamee"></div>
+    <div id="Password"><label for="password">Password: </label><input type="password" id="password"></div>
+    </div>
+    <div id="btns"><button id="submit" onclick="setUsername()">Submit Username and Password</button><button id="autofill" onclick="autofill()">Autofill password and Username</button></div>
+    <div id="div">
+        <div id="Username"><label for="textLocal">Username:</label> <input type="text" id="username"></div>
+        <div id="Password"><label for="passwordLocal">Password: </label><input type="password" id="passwordd"></div>
+        </div>
+        <div id="btns"><button id="submit" onclick="setUsernameLocal()">Submit Username and Password</button><button id="autofill" onclick="autofillLocal()">Autofill password and Username</button></div>
+        <span id="text2"></span>
+    <script>
+  
+     function setUsername(){
+        var Username =document.getElementById("usernamee").value;
+        var Password =document.getElementById("password").value;
+        sessionStorage.setItem("Username!",Username);
+        sessionStorage.setItem("Password!",Password);
+    }
+    function autofill(){
+        var Username =document.getElementById("usernamee").value;
+        var Password =document.getElementById("password").value;
+        var submittedUP =document.getElementById("usernamee");
+        var submittedP =document.getElementById("password");
+       submittedUP.value=sessionStorage.getItem("Username!");
+       submittedP.value=sessionStorage.getItem("Password!");
+       
+    }
+    function setUsernameLocal(){
+        var Username =document.getElementById("username").value;
+        var Password =document.getElementById("passwordd").value;
+        localStorage.setItem("Username",Username);
+        localStorage.setItem("Password",Password);
+    }
+    function autofillLocal(){
+        var Username =document.getElementById("username").value;
+        var Password =document.getElementById("passwordd").value;
+        var submittedUP =document.getElementById("username");
+        var submittedP =document.getElementById("passwordd");
+        submittedUP.value=localStorage.getItem("Username");
+        submittedP.value=localStorage.getItem("Password");
+    }
+  document.getElementById("text2").innerHTML=localStorage.key(3);
+    </script>
+</body>
+</html>
